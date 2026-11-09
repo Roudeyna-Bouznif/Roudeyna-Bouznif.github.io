@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Roudeyna Bouznif – AI engineering student</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#E8EDF2;--surface:#F7F9FB;--ink:#14213D;--muted:#4F5D75;--line:#C3CCD8;--box:#E0245E;--teal:#0B7A75;
+  box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+  --display:"Bricolage Grotesque","Trebuchet MS",sans-serif;--body:"Instrument Sans","Segoe UI",system-ui,sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#101826;--surface:#182234;--ink:#E8EDF5;--muted:#9AA9C0;--line:#2D3A52;--box:#FF5C8A;--teal:#3FD0C8}}
+:root[data-theme="dark"]{--bg:#101826;--surface:#182234;--ink:#E8EDF5;--muted:#9AA9C0;--line:#2D3A52;--box:#FF5C8A;--teal:#3FD0C8}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.0625rem/1.65 var(--body)}
+a{color:inherit}
+a:focus-visible,button:focus-visible{outline:3px solid var(--box);outline-offset:3px}
+.wrap{max-width:68rem;margin:0 auto;padding:0 1.25rem}
+nav{display:flex;justify-content:space-between;align-items:center;padding:1.25rem 0;font-weight:500}
+nav ul{display:flex;gap:1.5rem;list-style:none;margin:0;padding:0}
+nav a{text-decoration:none;color:var(--muted)}nav a:hover{color:var(--ink)}
+nav .logo{font:800 1.1rem var(--display);color:var(--ink)}
+/* hero */
+.hero{padding:clamp(2.5rem,8vw,6rem) 0 clamp(3rem,7vw,5rem)}
+.frame{position:relative;display:inline-block;padding:1.2rem 1.6rem 1.4rem;margin-left:.2rem}
+.frame::before{content:"";position:absolute;inset:0;border:3px solid var(--box);clip-path:inset(0 100% 100% 0);animation:draw 1.1s .2s cubic-bezier(.6,.1,.2,1) forwards}
+.frame i{position:absolute;width:12px;height:12px;background:var(--box);opacity:0;animation:pop .3s 1.2s forwards}
+.frame i:nth-of-type(1){top:-6px;left:-6px}.frame i:nth-of-type(2){top:-6px;right:-6px}
+.frame i:nth-of-type(3){bottom:-6px;left:-6px}.frame i:nth-of-type(4){bottom:-6px;right:-6px}
+.tag{position:absolute;top:-1.85rem;left:-3px;background:var(--box);color:#fff;font:600 .85rem/1 var(--body);padding:.45rem .7rem;opacity:0;animation:pop .3s 1.2s forwards}
+@keyframes draw{to{clip-path:inset(0 0 0 0)}}@keyframes pop{to{opacity:1}}
+h1{font:800 clamp(2.8rem,9vw,6.2rem)/.95 var(--display);letter-spacing:-.03em;margin:0}
+.lead{font:500 clamp(1.3rem,3vw,1.9rem)/1.3 var(--display);max-width:34rem;margin:2.5rem 0 1rem}
+.sub{max-width:36rem;color:var(--muted);margin:0 0 2rem}
+.btns{display:flex;flex-wrap:wrap;gap:.75rem}
+.btn{display:inline-block;padding:.7rem 1.2rem;border:2px solid var(--ink);border-radius:.4rem;font-weight:600;text-decoration:none}
+.btn.main{background:var(--ink);color:var(--bg)}
+.btn:hover{border-color:var(--box)}
+/* sections */
+section{padding:clamp(2.5rem,6vw,4.5rem) 0;border-top:1px solid var(--line)}
+h2{font:800 clamp(1.8rem,4vw,2.6rem)/1.05 var(--display);letter-spacing:-.02em;margin:0 0 .6rem}
+.intro{color:var(--muted);max-width:38rem;margin:0 0 2.5rem}
+/* projects */
+.proj{display:grid;grid-template-columns:minmax(0,1fr);gap:1rem 3rem;padding:2rem 0;border-bottom:1px solid var(--line)}
+.proj:last-child{border-bottom:0}
+@media(min-width:56rem){.proj{grid-template-columns:15rem minmax(0,1fr)}}
+.proj h3{font:800 1.6rem/1.1 var(--display);margin:0 0 .4rem;letter-spacing:-.01em}
+.cls{display:inline-block;border:2px solid var(--teal);color:var(--teal);font-weight:600;font-size:.82rem;padding:.15rem .5rem;border-radius:.2rem}
+.proj p{margin:0 0 .9rem;max-width:42rem}
+.proj dl{margin:0 0 1rem;display:grid;gap:.7rem}
+.proj dt{font-weight:600;color:var(--teal)}.proj dd{margin:0}
+.chips{display:flex;flex-wrap:wrap;gap:.4rem;padding:0;list-style:none;margin:0 0 1rem}
+.chips li{background:var(--surface);border:1px solid var(--line);padding:.15rem .6rem;border-radius:2rem;font-size:.88rem}
+.proj a.lnk{font-weight:600;text-underline-offset:4px}
+/* timeline */
+.tl{list-style:none;margin:0;padding:0 0 0 1.6rem;border-left:3px solid var(--line)}
+.tl li{position:relative;padding-bottom:2rem}
+.tl li::before{content:"";position:absolute;left:calc(-1.6rem - 8px);top:.45rem;width:13px;height:13px;border-radius:50%;background:var(--box)}
+.tl b{font:800 1.2rem var(--display)}.tl small{display:block;color:var(--muted);margin-bottom:.4rem}
+.tl p{margin:0;max-width:42rem}
+/* skills */
+.sk{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr))}
+.sk div{background:var(--surface);padding:1.2rem 1.3rem;border-left:4px solid var(--teal)}
+.sk h3{margin:0 0 .4rem;font:800 1.05rem var(--display)}.sk p{margin:0;color:var(--muted);font-size:.97rem}
+.contact{font:800 clamp(1.5rem,5vw,3rem)/1.15 var(--display);letter-spacing:-.02em;word-break:break-word}
+.contact a{text-decoration-thickness:3px;text-decoration-color:var(--box);text-underline-offset:6px}
+footer{padding:2rem 0 3rem;color:var(--muted);font-size:.92rem}
+@media(max-width:40rem){nav ul{gap:1rem;font-size:.95rem}.tag{font-size:.75rem}}
+@media(prefers-reduced-motion:reduce){.frame::before,.frame i,.tag{animation:none;opacity:1;clip-path:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<nav aria-label="Main"><span class="logo">RB</span>
+<ul><li><a href="#projects">Projects</a></li><li><a href="#path">Path</a></li><li><a href="#skills">Skills</a></li><li><a href="#contact">Contact</a></li></ul></nav>
+
+<header class="hero">
+<div class="frame"><span class="tag">engineer · 0.97</span><i></i><i></i><i></i><i></i>
+<h1>Roudeyna<br>Bouznif</h1></div>
+<p class="lead">I build AI systems that see, read and reason, then check that they hold up outside the demo.</p>
+<p class="sub">Third-year computer engineering student at ENICAR (Tunisia), specialising in AI/ML. Looking for an end-of-studies internship (PFE) starting in spring 2027.</p>
+<div class="btns">
+<a class="btn main" href="#contact">Get in touch</a>
+<a class="btn" href="https://github.com/Roudeyna-Bouznif" target="_blank" rel="noopener">GitHub</a>
+<a class="btn" href="https://www.linkedin.com/in/roudeyna-bouznif-0a767b426" target="_blank" rel="noopener">LinkedIn</a>
+</div>
+</header>
+
+<section id="projects">
+<h2>Selected work</h2>
+<p class="intro">Four projects, from agents that read EU regulation to a model that tracks players across a pitch. Each is labelled the way a detector would label it.</p>
+
+<article class="proj"><div><h3>Wink</h3><span class="cls">agent · multi-agent AI</span></div>
+<div><p>A multi-agent platform built during my internship at Talan Tunisie, for a startup project that helps teams with research, regulation and funding.</p>
+<dl><div><dt>The problem</dt><dd>Regulatory answers are only useful if they can be trusted, and one general-purpose agent drifts, loops and invents sources.</dd></div>
+<div><dt>What I built</dt><dd>Three specialised agents: scientific research (publication scouting, TRL and patentability assessment), regulatory watch (monitoring EU laws and directives) and investment (funding and investor matching). An orchestration layer dispatches them in parallel, with retrieval-augmented answers over Qdrant and citation-based guardrails against hallucination on regulatory questions.</dd></div></dl>
+<ul class="chips"><li>FastAPI</li><li>LangGraph</li><li>React</li><li>Qdrant</li><li>RAG</li></ul>
+<a class="lnk" href="https://github.com/youssefbenyoussefyby/startapini" target="_blank" rel="noopener">View the repository</a></div></article>
+
+<article class="proj"><div><h3>Football Analysis System</h3><span class="cls">person · computer vision</span></div>
+<div><p>A video pipeline that turns match footage into numbers: who is on which team, how fast they run and how far they cover.</p>
+<dl><div><dt>What I built</dt><dd>Player detection with YOLOv8, fine-tuned on a custom dataset, and multi-frame tracking. K-Means on jersey colour assigns players to teams. Optical flow estimates camera motion so it can be separated from player motion, and a perspective transform converts pixels into real metres to compute speed and distance.</dd></div>
+<div><dt>What I learned</dt><dd>Frame-by-frame detection is not enough on moving footage. Motion has to be modelled over time, and camera movement has to be removed first.</dd></div></dl>
+<ul class="chips"><li>YOLOv8</li><li>OpenCV</li><li>Optical flow</li><li>K-Means</li><li>PyTorch</li></ul>
+<a class="lnk" href="https://github.com/Roudeyna-Bouznif/Footbal_Analaysis_System" target="_blank" rel="noopener">View the repository</a></div></article>
+
+<article class="proj"><div><h3>OptraVerse</h3><span class="cls">document · NLP</span></div>
+<div><p>An AI career platform for resume optimisation and job matching.</p>
+<dl><div><dt>What I built</dt><dd>CV analysis, AI-based candidate profiling and personalised recommendations, using NLP and machine learning. I designed it around fairness and a clear user experience, since a tool that ranks people has to be explainable.</dd></div></dl>
+<ul class="chips"><li>Python</li><li>NLP</li><li>Machine learning</li></ul>
+<a class="lnk" href="https://github.com/Roudeyna-Bouznif/OptraVerse" target="_blank" rel="noopener">View the repository</a></div></article>
+
+<article class="proj"><div><h3>SPEED</h3><span class="cls">student · full-stack + ML</span></div>
+<div><p>A centralised student support platform: academic performance monitoring, mood tracking and appointment management.</p>
+<dl><div><dt>What I built</dt><dd>A Spring Boot application with role-based access control, plus ML features for early detection of academic risk and personalised recommendations.</dd></div></dl>
+<ul class="chips"><li>Spring Boot</li><li>Java</li><li>ML</li></ul>
+<a class="lnk" href="https://github.com/Malekkk25/SPEEDENICAR_PROJET_SPRING" target="_blank" rel="noopener">View the repository</a></div></article>
+</section>
+
+<section id="path">
+<h2>Path so far</h2>
+<p class="intro">Each step added a layer: web foundations, then agents, then vision.</p>
+<ul class="tl">
+<li><b>AI Intern, Talan Tunisie</b><small>Jul 2026 – Sep 2026</small><p>Built the Wink multi-agent platform: orchestration, RAG and hallucination guardrails.</p></li>
+<li><b>Software Engineering Intern, Société Tunisienne de Banque</b><small>Jun 2025 – Jul 2025</small><p>Developed internal web applications in PHP, HTML, CSS and JavaScript, analysed KYC data and contributed to client account creation modules.</p></li>
+<li><b>Engineering degree in Computer Science, ENICAR</b><small>Sep 2024 – Sep 2027</small><p>Specialising in AI/ML. Certified by NVIDIA in Fundamentals of Deep Learning and in Building LLM Applications with Prompt Engineering.</p></li>
+<li><b>Treasurer, IEEE AESS Chapter ENICAR</b><small>Jan 2025 – Jan 2026</small><p>Managed the chapter’s finances and budget for technical events and projects. IEEE ENICARTHAGE member since 2024.</p></li>
+</ul>
+</section>
+
+<section id="skills">
+<h2>What I work with</h2>
+<p class="intro">Languages: English (B2), French (B2), German (A2).</p>
+<div class="sk">
+<div><h3>Generative AI and agents</h3><p>LLMs, prompt engineering, RAG, multi-agent systems, LangGraph, Qdrant, anti-hallucination guardrails</p></div>
+<div><h3>Machine learning and vision</h3><p>PyTorch, Pandas, NumPy, NLP, deep learning, OpenCV, YOLOv8, tracking, optical flow, K-Means</p></div>
+<div><h3>Backend and web</h3><p>FastAPI, Spring Boot, REST APIs, React, Angular, PHP, HTML, CSS</p></div>
+<div><h3>Languages and data</h3><p>Python, Java, JavaScript, TypeScript, C, C++, SQL, PostgreSQL, MySQL, Oracle, MongoDB</p></div>
+</div>
+</section>
+
+<section id="contact">
+<h2>Let’s talk</h2>
+<p class="intro">I’m open to a PFE in AI starting March or April 2027, in Tunisia or abroad.</p>
+<p class="contact"><a href="mailto:roudeyna.bouznif@enicar.ucar.tn">roudeyna.bouznif@enicar.ucar.tn</a></p>
+<p><a href="tel:+21654369611">+216 54 369 611</a> · <a href="https://www.linkedin.com/in/roudeyna-bouznif-0a767b426" target="_blank" rel="noopener">LinkedIn</a> · <a href="https://github.com/Roudeyna-Bouznif" target="_blank" rel="noopener">GitHub</a></p>
+</section>
+<footer>© 2026 Roudeyna Bouznif</footer>
+</div>
+</body>
+</html>
